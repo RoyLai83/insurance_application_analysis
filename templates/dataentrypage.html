@@ -1,0 +1,62 @@
+{% extends "layout.html" %}
+
+{% block content %}
+    <center> <h1><u><font color="black">Machine Learning with Insurance Application</font></u></h1></center>
+    <p>Welcome. The purpose of this page is to illustrate machine learning and how it could be applied for insurance application processes.
+        The data was obtained from a kaggle competition and is for the purpose of analysis and proof of concept only.
+    </p>
+
+    <p></p>
+    <p></p>  
+    <p></p>  
+    <p></p>     
+    <div style="position: absolute; width: 600px; height: 300px; z-index: 15; top: 40%; left: 40%; margin: -100px 0 0 -150px;">
+        <form action="" method="POST">
+            <br>
+            <input id="Medical_History_4" name="Medical_History_4" class="form-control" aria-describedby="" placeholder="Enter medical history 4">
+            <br>
+            <input id="BMI" name="BMI" class="form-control" aria-describedby="" placeholder="Enter BMI of the insured">
+            <br>
+            <input id="Product_Info_4" name="Product_Info_4" class="form-control" aria-describedby="" placeholder="Enter product info 4">
+            <br>
+            <input id="Medical_History_15" name="Medical_History_15" class="form-control" aria-describedby="" placeholder="Enter medical history 15">
+            <br>
+            <input id="InsuredInfo_6" name="InsuredInfo_6" class="form-control" aria-describedby="" placeholder="Enter insured info 6">
+            <br>
+            <input id="Medical_History_23" name="Medical_History_23" class="form-control" aria-describedby="" placeholder="Enter medical history 23">
+            <br>
+            <input id="Medical_Keyword_15" name="Medical_Keyword_15" class="form-control" aria-describedby="" placeholder="Enter medical keyword 15">
+            <br>
+            <input id="Ins_Age" name="Ins_Age" class="form-control" aria-describedby="" placeholder="Enter age of the insured">
+            <br>
+            <center><input id="modalBtn" class="btn btn-primary" type="submit" value="Predict" /></center>
+        </form>
+        <br>
+        <br>
+        {% if Medical_History_4 == 0 and BMI == 0 and Product_Info_4 == 0 and Medical_History_15 == 0 and InsuredInfo_6 ==0 and Medical_History_23 == 0 and Medical_Keyword_15 ==0 and Ins_Age == 0 %}
+            <p>exp.as_pyplot_figure()</p>
+            <font color="black">Please enter data.</font>
+            <p></p>
+        {% else %}
+            <p></p>
+            <center><font color="black">  Predicted Response Rate: {{predicted_class[0]}}</font></center>
+            <br>
+            <center><img height="160" width="160" src="./static/plot.png" /></center>
+            <br>
+            <center><iframe height="200" width="1000" class="frame-border scroll-pane" src="./static/plot2.html" frameborder="0"></iframe></center>
+            <p></p>
+    {% endif %}
+    </div>
+    <p></p>
+    <p></p>
+    <p></p>
+
+    <div style="font-size:18px;">
+
+    </div>
+
+    <p></p>
+    <p></p>
+    <p></p>
+
+{% endblock %}
